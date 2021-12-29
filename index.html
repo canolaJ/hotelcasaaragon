@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo2.png" type="image/png" sizes="40x40">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Hotel Casa Aragon</title>
+</head>
+<body>
+    <nav>
+        <span class="container__logo">
+            <img src="img/logo.png" alt="Logo">
+        </span>
+        <input type="checkbox" id="check" class="check__bars">
+        <label for="check"><i class="fas fa-bars"></i></label>
+        <ul>
+            <li>
+                <a href="#">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Habitaciones</a>
+            </li>
+            <li>
+                <a href="#">Contacto</a>
+            </li>
+            <li>
+                <a href="#">Reservas</a>
+            </li>
+            <li>
+                <a href="#">Turismo</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="section__bg"></section>
+    <section class="container section__form">
+        <div class="row">
+            <form>
+                <div class="row g-3">
+                    <div class="col-sm-12 col-md-3">
+                        <input type="text" class="form-control" placeholder="Nombre Completo" id="name" required>
+                    </div>
+                    <div class="col-sm-12 col-md-3">
+                        <input type="email" class="form-control" placeholder="E-mail" id="Last email" >
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <input type="text" class="form-control" placeholder="Teléfono" id="phone" required>
+                    </div>
+                    <div class="col-sm-12 col-md-3">
+                        <select id="inputState" class="form-select">
+                            <option selected>Sencilla 1 Persona</option>
+                            <option>Sencilla 2 Persona</option>
+                            <option>Habitación Doble</option>
+                            <option>Habitación Triple</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-1">
+                        <input type="button" class="btn btn-aragon" value ="reservar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
