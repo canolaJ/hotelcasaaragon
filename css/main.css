@@ -43,7 +43,8 @@
 
 
 body{
-    background: rgb(14, 14, 14);
+    background: var(--color-grey)
+    /* background: rgb(14, 14, 14); */
     /* background-color: rgb(45, 116, 197); */
 }
 
@@ -58,8 +59,8 @@ nav{
     top : 0;
     z-index:99999;
     background-color: rgb(0, 0, 0,0.2);
-    backdrop-filter: blur(8px);
-    border-top: 3px solid var( --color-orange );
+    backdrop-filter: blur(10px);
+    border-top: 2px solid var( --color-orange );
 }
 
 .container__logo{
@@ -81,6 +82,7 @@ input[type = checkbox], label{
 }
 
 nav ul{
+    margin-top: 10px;
     display : flex;
     align-items: center;
     justify-content: center;
@@ -88,6 +90,19 @@ nav ul{
     flex-direction: row;
     margin-right: 40px;
 }
+
+.active{
+    border-bottom: 2px solid var(--color-orange);
+    background-color: var(--color-black);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color : var(--color-black);
+}
+
+.active a{
+    color : var(--color-orange);
+}
+
 
 nav ul li{
     margin: 40px;
@@ -128,19 +143,38 @@ section .section__bg{
     background-image: url(../img/carrusel/portada.jpg);
     width: 100%;
     max-width: 100%;
-    height: 560px;
+    height: 110vh;
     margin-top: -80px;
     background-size: cover;
     background-position: center center;
+    position: relative;
 }
 
+
+.section__bg .bg__portada{
+    position: absolute;
+    width: 100%;
+    height: 90px; 
+    overflow: hidden; 
+    transform: rotate(180deg); 
+    line-height: 0;
+    left: 0;
+    bottom: 0;
+}
+.section__bg .bg__portada svg{
+    stroke: none; 
+    fill: var(--color-black);
+    width: calc(100% + 1.3px);
+}
+
+/* formulario de reservas */
 .section__form{
     padding: 30px 15px;
     position: absolute;
-    top:70%;
+    top:62%;
     left:8%;
     background-color: rgb(255, 255, 255,0.2);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(3px);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -148,89 +182,37 @@ section .section__bg{
     -o-border-radius: 5px;
 }
 
-aside{
+.wave__form{
+    display:none;
+}
+
+/* container__room */
+
+.container__room{
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 180px;
+    background-color: var(--color-black);
+    position: relative;
+    z-index: 0;
+}
+
+.container__room h1, h2{
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.container__room .container__img{
+    width: 400px;
+    height: 300px;
+    padding: 10px;
+    z-index: 1;
+
+}
+
+.container__room .container__img img{
     width: 100%;
     height: auto;
-    padding-bottom: 10px;
-    background-color: var( --color-black );
-}
-
-aside .col__card{
-    margin-top: 130px;
-    position: relative;
-}
-
-aside .card__hospedaje{
-    background-color: var(--color-orange);
-    backdrop-filter: blur(10px);
-    padding:15px 40px;
-    margin-bottom:5px;
-    border-top-right-radius: 80px;
-    border-bottom-left-radius: 80px;
-}
-
-aside .card__politicas{
-    background-color: var(--color-orange);
-    height:99%;
-    padding:15px 40px;
-}
-
-aside .card__turismo{
-    background-color: var(--color-orange);
-    height:99%;
-    padding:15px 40px;
-    border-top-left-radius: 80px;
-    border-bottom-right-radius: 80px;
-}
-
-aside .col__card .ico__aside{
-    width: 100%;
-    height: 150px;
-    text-align: center;
-    
-}
-
-aside .col__card .ico__aside i{
-    padding: 30px;
-    border: 1px solid var(--color-orange);
-    border-radius:50%;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    -ms-border-radius:50%;
-    -o-border-radius:50%;
-    font-size:60px;
-    color: var(--color-orange);
-    background-color: var(--color-black);
-}
-
-aside .col__card h3{
-    text-align: center;
-    color: var(--color-black);
-    margin-bottom : 40px;
-}
-
-aside .col__card p{
-    padding : 10px;
-    padding-bottom : 30px;
-    color: var(--color-gray);
-    margin-bottom : 40px;
-}
-
-aside .col__card input[type="button"]{
-    position: absolute;
-    left : 40%;
-    bottom : 0;
-    margin-bottom: 10px;
-}
-
-.section__map h2{
-    color: var(--color-white);
-    margin: 30px 0;
-}
-
-.section__map .col__map{
-    padding: 10px;
-    border: 1px solid var(--color-orange);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -238,11 +220,417 @@ aside .col__card input[type="button"]{
     -o-border-radius: 10px;
 }
 
+.container__room .information{
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px 100px;
+}
+
+.container__room .information{
+    color: var(--color-white);
+    font-size: 18px;
+}
+
+.container__room .information__room p{
+    padding: 5px 50px;
+    font-size: 18px;
+    color: var(--color-white);
+}
+
+.row__habitaciones{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.container__room .information__room ul{
+    list-style: none;
+    padding: 5px 50px;
+}
+
+.container__room .information__room li{
+    font-size: 18px;
+    color: var(--color-orange);
+}
+
+.container__room .information__room i{
+    font-size: 18px;
+    color: var(--color-orange);
+}
+
+hr{
+    color: var(--color-white);
+}
+
+.divider__room{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: -1;
+}
+
+.divider__room svg{
+    width: calc(100% + 1.3px);
+    height: 120px;
+    transform: rotateY(180deg);
+    fill: var( --color-grey );
+}
+
+
+.container__room img{
+    width: 500px;
+    height:auto;
+}
+
+/* section aside */
+aside{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    background-color: var( --color-grey );
+}
+
+.row__aside{
+    padding: 0 50px;
+}
+
+.row__aside .col__card{
+    margin-top: 30px;
+    position: relative;
+}
+
+.row__aside .card__hospedaje,
+.card__politicas,
+.card__turismo{
+    background-color: rgb(255, 255, 255,.7);
+    backdrop-filter: blur(20px);
+    width: 400px;
+    height:380px;
+    padding:5px 10px;
+    margin-bottom:5px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.row__aside .ico__aside{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.row__aside .col__card .ico__aside i{
+    padding: 20px;
+    border: 1px solid var(--color-orange);
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    font-size:40px;
+    color: var(--color-orange);
+    background-color: var(--color-black);
+}
+
+.row__aside .col__card h5{
+    text-align: center;
+    margin-top: 10px;
+    color: var(--color-black);
+    margin-bottom : 10px;
+}
+
+.row__aside .col__card p{
+    padding : 5px;
+    color: var(--color-gray);
+    margin-bottom : 40px;
+}
+
+.row__aside .col__card button{
+    position: absolute;
+    left : 40%;
+    bottom : 0;
+    margin-bottom: 10px;
+}
+
+/* section map */
+.section__map {
+    position: relative;
+    background-color: var(--color-black);
+    z-index:-1;
+}
+
+.section__map .divide__map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+
+.section__map .divide__map svg{
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+    fill: var( --color-grey );
+}
+.section__map h2{
+    color: var(--color-white);
+    margin: 40px 0;
+    text-align: center;
+}
+
+.section__map .col__map{
+    padding: 10px 60px;
+}
+
+.section__map .col__map iframe{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: 1px solid var(--color-orange);
+}
+
+
+
+main{
+    width: 100%;
+    max-width: 100%;
+    height:auto;
+    margin-top: -60px;
+    background-image: url(../img/habitaciones/4.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+
+main .row{
+    padding: 10px 200px;
+    height: auto;
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(7px);
+}
+
+main h1{
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    text-align: center;
+    color:var(--color-black);
+    text-decoration: underline solid var(--color-black);
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+main .row h2{
+    margin-top: 20px;
+}
+
+main .col__room{
+    height: auto;
+    padding: 10px;
+}
+
+.card__room{
+    height: 100%;
+    padding: 30px 20px;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.col__room img{
+    width: 100%;
+    max-width: 100%;
+    height : 300px;
+    object-fit: cover;
+    border: 2px solid var(--color-orange);
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+.col__room h2{
+    text-align: center;
+    color:var(--color-orange);
+    margin-top: 5px;
+}
+
+.col__room p{
+    padding:15px 10px;
+    color : var(--color-white);
+}
+
+.col__room ul{
+    width: 100%;
+    height: auto;
+    list-style: none;
+}
+
+.col__room li{
+    margin-top:10px;
+}
+
+.col__room li, i{
+    font-size:18px;
+    color : var(--color-orange);
+}
+
+.col__room li i{
+    margin-right: 15px;
+}
+
+.col__room button i{
+    color : var(--color-black);
+}
+
+.col__room button:hover i{
+    color : var(--color-orange);
+}
+
+
+.main__form{
+    height: 100%;
+    margin-top:-60px;
+    padding-top: 80px;
+    background-color: var(--color-white);
+    background-image: url(../img/habitaciones/20200228_201102.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.col__form {
+    width : 100%;
+    height: 100vh;
+    margin-top:-60px;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,255,255,0.4);
+    backdrop-filter: blur(5px);
+}
+
+
+section .form__contacto{
+    width: 450px;
+    height: 500px;
+    padding : 30px;
+    background-color: rgba(0,0,0,0.9);
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+section .form__contacto h2{
+    color : var(--color-orange);
+    text-align : center;
+    margin-bottom: 30px;
+}
+
+section .form__contacto input, textarea{
+    width:100%;
+    color: var(--color-orange);
+    font-size: 18px;
+    margin:10px 0;
+    background: #0F0E0E;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--color-orange);
+    outline: none;
+    transition: all .5;
+    -webkit-transition: all .5;
+    -moz-transition: all .5;
+    -ms-transition: all .5;
+    -o-transition: all .5;
+}
+
+.form__contacto input:focus, textarea:focus{
+    border-bottom: 1px solid var(--color-grey);
+}
+
+section .form__contacto input::placeholder, textarea::placeholder{
+    width:100%;
+    color : var(--color-orange);
+    font-size: 18px;
+}
+
+section i{
+    color:var(--color-black);
+}
+
+.turismo{
+    background-color: var(--color-grey);
+    padding:0 100px;
+}
+.card__turismo__cartago{
+    height: 94%;
+    background-color:var(--color-light-gray);
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    z-index: 0;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+
+.card__turismo__cartago img{
+   width:100%;
+   height:400px;
+}
+
+.card__turismo__cartago{
+    position: relative;
+}
+.wave{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+}
+
+.card__turismo__cartago h2{
+    color: var(--color-white);
+    padding:10px;
+    text-align:center;
+}
+
+.card__turismo__cartago p{
+    color: var(--color-white);
+    padding:20px;
+}
+
+.card__turismo__cartago button:hover i{
+    color: var(--color-white);
+}
+
+
+
+
+
+
+
 
 footer{
     width: 100%;
     height: 110px;
-    background-color: var(--color-orange);
+    background-color: rgb(0, 0, 0,.3);
+    backdrop-filter: blur(10px);
 }
 
 footer ul{
@@ -263,14 +651,10 @@ footer li{
 }
 
 footer li:hover{
-    border-bottom: 2px solid var(--color-white);
+    border-bottom: 2px solid var(--color-orange);
     background-color: var(--color-black);
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
-}
-
-footer a{
-    text-decoration: none;
 }
 
 footer a:hover{
@@ -282,17 +666,28 @@ footer li:hover  a{
     color: var(--color-orange);
 }
 
-li:hover
+footer li:hover  i{
+    color: var(--color-orange);
+}
 
 footer i, a{
+    text-decoration: none;
     font-size:18px;
-    color: var(--color-black)
+    color: var(--color-white);
 }
 
 footer p{
     font-size:18px;
-    color: var(--color-black);
+    color: var(--color-orange);
     text-align : center;
+}
+
+.see{
+    display: block;
+}
+
+.see__not{
+    display: none;
 }
 
 
@@ -301,37 +696,56 @@ footer p{
 @media (max-width: 991px) {
 
     .container__logo{
-        width: 200px;
+        width: 150px;
         height: 80px;
     }
     .container__logo img{
-        width: 200px;
+        width: 150px;
         margin-left: 15px;
     }
+
+    nav ul{
+        display:flex;
+        align-items: center;
+        margin-right: 30px;
+    }
+
+    nav ul li{
+        margin: 2px;
+        padding: 5px;
+    }
     nav ul li a{
-        margin: 5px;
+        margin: 2px;
         font-size: 20px;
     }
 }
+
+
+/* display movil */
 
 @media (max-width: 767px) {
 
     nav{
         width: 100%;
-        height: 80px;
+        max-width: 100%;
+        height: 50px;
         display: block;
         background-color: rgb(0, 0, 0, 0.2);
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid var( --color-orange );
     }
 
     nav label{
         display: block;
         position: absolute;
-        top: 0;
+        top: 10px;
         left: 85%;
-        margin-top: 20px;
-        font-size: 32px;
-        color: var(--color-black);
+        color: var(--color-orange);
+    }
+
+    nav label i{
+        font-size: 30px;
+        color: var(--color-orange);
     }
 
     nav ul{
@@ -341,7 +755,7 @@ footer p{
         display : block;
         text-align: center;
         position : sticky;
-        margin-top:-13px;
+        padding-top: 14px;
         background-color: rgb(0, 0, 0, 0.94);
         backdrop-filter: blur(8px);
         transition: all 0.5s;
@@ -355,10 +769,18 @@ footer p{
         margin-top : 10px;
     }
 
+    nav ul li:hover{
+        border-right: 1px solid var(--color-orange);
+    }
+
     nav ul li a{
         margin: 10px;
         padding: 30px;
         font-size: 20px;
+    }
+
+    .active{
+        border-right: 1px solid var(--color-orange);
     }
 
     .check__bars:checked ~ ul{
@@ -367,58 +789,245 @@ footer p{
 
     .container__logo{
         width: 150px;
-        height: 80px;
+        height: 40px;
+        padding:2px;
     }
 
     .container__logo img{
-        width: 150px;
-        height: 70px;
-        margin-left: 15px;
+        width: 100px;
+        height: 40px;
+        margin-left: 5px;
     }
 
-    section .section__bg{
-        height: 400px;
+    .section__bg{
+        background-image: url("../img/habitaciones/4.jpg") no-repeat;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 7px;
+        height: 70vh;
+        box-shadow: 0px 4px 6px rgba(0,0,0);
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .bg__portada{
+        display: none;
+    }
+
+    .wave__form{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .wave__form svg{
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 29px;
+        fill: var(--color-grey);
+    }
+
+    /* formulario reservas */
+    .section__form{
+        padding: 4px 15px;
+        margin-top: -7px;
+        display: block;
+        position : static;
+        background-color: var(--color-grey);
+        backdrop-filter: blur(0px);
+    }
+
+    .section__form button{
+        margin-bottom: 10px;
+    }
+
+    .section__form::before{
+        content: 'Generar Reservar';
+        width: 100%;
+        font-size: 30px;
+        font-weight: 600;
+        padding: 15px;
+        text-align: center;
+        margin: 20px;
+        color: var(--color-orange);
+    }
+   
+    .container__room{
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 2px;
+        margin-top: 20px;
+        background-color: var(--color-black);
+        position: relative;
+        z-index: 0;
     }
     
-    .section__bg{
-        height: 400px;
+    .container__room h1, h2{
+        color: var(--color-white);
+        text-align: center;
+        margin-bottom: 30px;
     }
-
-    .section__form{
-        padding: 30px 15px;
-        position: block;
-        left:0;
-        background-color: rgb(255, 255, 255,0.2);
-        backdrop-filter: blur(8px);
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
+    .container__room .container__img{
+        width: 100%;
+        height: auto;
+        padding: 10px 20px;
+        z-index: 1;
+    
     }
-
-    aside .col__card{
-        margin-top: 40px;
-        position: relative;
+    
+    .container__room .container__img img{
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        
+        box-shadow: 0 1px 5px rgba(255,255, 255);
     }
-
-    aside .one__card{
-        margin-top: 450px;
-        position: relative;
+    
+    .container__room .information{
+        display:flex;
+        flex-direction: column;
+        align-items: left;
+        padding: 20px 30px;
     }
-
-    aside .two__card{
-        padding-top : 30px;
-        background-color: var(--color-black);
+    
+    .container__room .information{
+        color: var(--color-white);
+        font-size: 18px;
     }
-
-    aside .two__card h3{
+    
+    .container__room .information__room p{
+        padding: 5px 30px;
+        font-size: 18px;
         color: var(--color-white);
     }
-
-    aside .two__card p{
+    
+    .row__habitaciones{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    .container__room .information__room ul{
+        list-style: none;
+        padding: 5px 50px;
+    }
+    
+    .container__room .information__room li{
+        font-size: 18px;
+        color: var(--color-orange);
+    }
+    
+    .container__room .information__room i{
+        font-size: 18px;
+        color: var(--color-orange);
+    }
+    
+    hr{
         color: var(--color-white);
     }
+    
+    .divider__room{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        z-index: -1;
+    }
+    
+    .divider__room svg{
+        width: calc(100% + 1.3px);
+        height: 120px;
+        transform: rotateY(180deg);
+        fill: var( --color-grey );
+    }
+    
+    
+    .container__room img{
+        width: 500px;
+        height:auto;
+    }
+    
+   
+    .section__map{
+        margin: 10px 0;
+    }
+
+    .section__map h2{
+        margin: 10px 0;
+    }
+
+    main .row{
+        padding: 5px 4px;
+    }
+
+    main h1{
+        color: var( --color-white);
+        text-decoration : none;
+    }
+
+    main .row h2{
+        margin-top: 20px;
+    }
+
+    main .col__room{
+        height: auto;
+        padding: 3px;
+    }
+    
+    .card__room{
+        height: 100%;
+        padding: 15px 8px;
+    }
+
+    .col__room img{
+        height : 200px;
+    }
+
+
+    .col__form {
+        max-width : 100%;
+        height: auto;
+        margin-top:-60px;
+        padding-top: 1px;
+        display: block;
+    }
+
+    section .form__contacto{
+        width: 100%;
+        margin-top:50px;
+        margin-bottom: 10px;
+        height: auto;
+        padding : 10px;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+    .turismo{
+        padding:0 10px;
+    }
+
+    .card__turismo__cartago{
+        height: 94%;
+        padding-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    
+    
     footer{
         margin-top: 10px;
         width: 100%;
@@ -431,8 +1040,14 @@ footer p{
         align-items : center;
         padding-top: 10px;
     }
+
+    .see{
+        display: block;
+    }
     
-   
+    .see__not{
+        display: none;
+    }
 
 
 }
