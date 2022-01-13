@@ -1,6 +1,5 @@
 const link__nav = document.querySelectorAll(".btn__nav");
 const main = document.querySelectorAll(".main");
-console.log(main);
 
 const activeBtn = (valor) => {
     let dato = -1;
@@ -10,7 +9,8 @@ const activeBtn = (valor) => {
         if (dato === valor){
             item.classList.add("active");
             activeContent(valor);
-        } 
+        }
+        document.getElementById('check').click();
 
     });
 }
