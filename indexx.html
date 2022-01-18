@@ -53,19 +53,19 @@
     <!-- formulario de reservas en inicio -->
     <section class="container section__form main main__0">
         <div class="row">
-            <form data-aos="flip-left">
+            <form action="" data-aos="flip-left" id='form__inicio'>
                 <div class="row g-3">
                     <div class="col-sm-12 col-md-4">
-                        <input type="text" class="form-control" placeholder="Nombre Completo" id="name" required>
+                        <input type="text" class="form-control"  placeholder="Nombre Completo" id="name"  required>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <input type="email" class="form-control" placeholder="E-mail" id="Last email" >
+                        <input type="email" class="form-control" placeholder="E-mail" id="email" pattern="[a-zA-Z ]" >
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <input type="text" class="form-control" placeholder="Teléfono" id="phone" required>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <select id="inputState" class="form-select">
+                        <select id="room__type" class="form-select">
                             <option selected>Sencilla 1 Persona</option>
                             <option>Sencilla 2 Persona</option>
                             <option>Habitación Doble</option>
@@ -93,14 +93,14 @@
     </section>
     <section class="container-fluid container__room main main__0">
         <div class="row">
-            <h1>Un Gran Hotel para Gente Muy especial</h1>
+            <h1>"Un Gran Hotel para Gente Muy Especial"</h1>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6 container__img">
                 <img src="img/habitaciones/4.jpg"/>
             </div>
             <div class="col-sm-12 col-md-6 information">
-                <p>En nuestro hotel te sentiras como en casa.</p>
+                <p>En nuestro hotel te sentirás como en casa.</p>
                 <p>Disfruta de nuestras Habitaciones confortables con ventilador o aire acondicionado.</p>
                 <p>Estamos ubicados a solo 5 minutos del parque Bolivar.</p>
             </div>
@@ -112,7 +112,7 @@
             </div>
             <div class="col-sm-12 col-md-6 information__room">
                 <h2>Disfruta de nuestras Habitaciones</h2>
-                <p>todas nuestras habitaciones te estan esperando para que disfrutes de tu estadía con nosotros:</p>
+                <p>Todas nuestras habitaciones te están esperando para que disfrutes de tu estadía con nosotros:</p>
                 <ul>
                     <li><i class="fas fa-wifi"></i> Wifi.</li>
                     <li><i class="fas fa-shower"></i> Baño Privado.</li>
@@ -324,7 +324,7 @@
                 <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z"></path>
             </svg>
         </div>
-        <div class="row">
+        <div class="row row__turismo">
             <div class="col-sm-12 col-md-8">
                 <img src="img/turismo/cartago/1.png" alt="portada__cartago">
             </div>
@@ -332,7 +332,7 @@
                 <h3>Turismo en Cartago Valle</h3>
                 <p>Cartago es un municipio colombiano lleno de cultura y lugares por descubrir.</p>
                 <div class="text-center mb-3">
-                    <button class="btn btn-aragon-danger">
+                    <button type="button" id="add__data" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-aragon-danger">
                         <i class="fas fa-sign-in-alt"></i> 
                         Conocer más
                     </button>
@@ -348,7 +348,7 @@
                 <h3>Turismo en el Eje Cafetero</h3>
                 <p>Cartago es el epicentro de la Zona Cafetera. Usted puede alojarse con nosotros y visitar todo el ecosistema cafetero-turístico de la región.</p>
                 <div class="text-center mb-3">
-                    <button class="btn btn-aragon-danger">
+                    <button type="button" id="add__data__cafetero" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-aragon-danger">
                         <i class="fas fa-sign-in-alt"></i> 
                         Conocer más
                     </button>
@@ -361,6 +361,24 @@
             </svg>
         </div>
     </article>
+     <!--================== modal turismo reutilizable ================== -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header" id="header">
+                    
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="new__data">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-aragon-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="container-fluid">
         <ul>

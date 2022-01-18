@@ -180,6 +180,18 @@ section .section__bg{
     -o-border-radius: 5px;
 }
 
+.section__form .btn-aragon{
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+
+.section__form .btn-aragon:hover i{
+    color:var(--color-orange);
+}
+
 .wave__form{
     display:none;
 }
@@ -572,8 +584,9 @@ section i{
     height: auto;
     max-width: 100%;
     position: relative;
-    z-index: -1;
+    z-index: 1;
 }
+
 
 .turismo .divide__turismo {
     position: absolute;
@@ -584,7 +597,6 @@ section i{
     height: 350px;
     overflow: hidden;
     line-height: 0;
-    z-index: -1;
 }
 
 .turismo .divide__turismo svg {
@@ -619,6 +631,7 @@ section i{
 
 .turismo .row{
     padding:100px 250px;
+    position: relative;
     z-index: 1;
 }
 .turismo img{
@@ -629,7 +642,6 @@ section i{
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
-    z-index: 1;
 }
 
 .turismo .information__turismo__cartago{
@@ -677,6 +689,72 @@ section i{
     flex-direction: row-reverse;
 }
 
+/*===================================style modal turismo=================================== */
+
+.modal{
+    margin-top: 70px;
+    max-width: 100%;
+    background-color: rgb(0, 0, 0,.2);
+    backdrop-filter: blur(15px);
+    padding-bottom: 60px;
+}
+
+
+.modal h5{
+    color: var(--color-black);
+}
+
+.modal .modal-content{
+    box-shadow: 2px 0  5px var(--color-white);
+}
+
+.modal .card{
+    width: 100%;
+    height: 320px;
+    margin:  10px;
+    background: var(--color-grey);
+    border: 1px solid var(--color-black);
+}
+
+.modal .card h5{
+    color:var(--color-white);
+    font-size: 15px;
+    text-align:center;
+    padding: 3px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.modal .card img{
+    width: 100%;
+    height: 180px;
+}
+
+.modal .card .btn__url{
+    width: 90%;
+    position:absolute;
+    bottom: 10px;
+    display:flex;
+    justify-content: center;
+}
+
+.modal .card .btn__url .btn-aragon-danger:hover{
+    background: var(--color-orange);
+}
+
+.modal .card .btn__url .btn-aragon-danger:hover i{
+    color: var(--color-black);
+}
+
+
+.modal .modal-footer .btn-aragon-danger{
+    border: 1px solid var(--color-orange);
+}
+
+.modal .modal-footer .btn-aragon-danger:hover{
+    border: 1px solid var(--color-black);
+    background: var(--color-orange);
+}
 /*===================================setion footer=================================== */
 
 footer{
@@ -1463,7 +1541,6 @@ footer p{
         max-width: 100%;
         padding: 1px;
         position: relative;
-        z-index: -1;
     }
 
     .turismo .divide__turismo {
@@ -1561,6 +1638,74 @@ footer p{
         display: flex;
         flex-direction: row-reverse;
     }
+
+    /*===================================style modal turismo=================================== */
+
+    .modal{
+        margin-top: 50px;
+        width: 100%;
+        max-width: 100%;
+        background-color: rgb(0, 0, 0,.2);
+        backdrop-filter: blur(15px);
+        padding-bottom: 20px;
+        padding: 5px;
+    }
+
+
+    .modal h5{
+        color: var(--color-black);
+        font-size: 15px;
+    }
+
+    .modal .card{
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+        margin:  0px;
+        margin-bottom: 10px;
+        background: var(--color-grey);
+        border: 1px solid var(--color-black);
+    }
+
+.modal .card h5{
+    color:var(--color-white);
+    font-size: 15px;
+    text-align:center;
+    padding: 3px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.modal .card img{
+    width: 100%;
+    height: 180px;
+}
+
+.modal .card .btn__url{
+    width: 90%;
+    position:absolute;
+    bottom: 10px;
+    display:flex;
+    justify-content: center;
+}
+
+.modal .card .btn__url .btn-aragon-danger:hover{
+    background: var(--color-orange);
+}
+
+.modal .card .btn__url .btn-aragon-danger:hover i{
+    color: var(--color-black);
+}
+
+
+.modal .modal-footer .btn-aragon-danger{
+    border: 1px solid var(--color-orange);
+}
+
+.modal .modal-footer .btn-aragon-danger:hover{
+    border: 1px solid var(--color-black);
+    background: var(--color-orange);
+}
 
 
     footer{
