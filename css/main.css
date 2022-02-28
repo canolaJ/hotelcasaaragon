@@ -5,6 +5,8 @@
     --color-white: rgb(255, 255, 255);
     --color-black: rgb(0, 0, 0);
     --color-light-gray: rgb(129, 132, 129);
+    --color-green: rgb(19, 204, 19);
+    --color-red: rgb(204, 19, 19);
 }
 
 /* ===================================butttons ===================================*/
@@ -120,6 +122,10 @@ nav ul li:hover{
     border-bottom-right-radius: 10px;
 }
 
+nav ul li a i{
+    color: var(--color-orange);
+}
+
 nav ul li a{
     margin: 10px;
     text-decoration: none;
@@ -129,7 +135,7 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color : var(--color-orange);
+    color : var(--color-white);
 }
 
 section .section__bg{
@@ -192,6 +198,47 @@ section .section__bg{
     color:var(--color-orange);
 }
 
+.btn__reserva{
+    pointer-events: none;
+    background: var(--color-black);
+    border:1px solid var(--color-orange);
+}
+
+.btn__reserva i{
+    color: var(--color-orange);
+}
+
+.btn__reserva__room .btn-aragon{
+    border: 1px solid var(--color-orange);
+}
+
+.btn__reserva__room .btn-aragon{
+    color: var(--color-black);
+    font-weight: 500;
+    box-shadow: 1px 1px 8px var(--color-black);
+}
+
+.btn__reserva__room .btn-aragon:hover i{
+    color: var(--color-white);
+}
+
+.btn__reserva__room .btn-aragon:hover{
+    color: var(--color-white);
+    font-weight: 500;
+    box-shadow: 1px 1px 8px var(--color-grey);
+}
+
+.btn__reserva__room .btn-aragon i{
+    color:var(--color-black);
+}
+
+.is-valid{
+    border: 2px solid var(--color-green);
+}
+
+.is-invalid{
+    border: 2px solid var(--color-red);
+}
 .wave__form{
     display:none;
 }
@@ -229,6 +276,7 @@ section .section__bg{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+
 
 .container__room .information{
     display:flex;
@@ -292,6 +340,84 @@ hr{
 .container__room img{
     width: 500px;
     height:auto;
+    box-shadow: 2px 3px 5px var(--color-light-gray);
+}
+
+.col__animation{
+    display:flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    height:200px;
+}
+
+.col__animation img{
+    box-shadow:none;
+    width: 500px;
+    animation-name:logo;
+    animation-duration:5s;
+    animation-direction: alternate;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes logo {
+    0% {
+        transform: translateY(10%);
+        -webkit-transform: translateY(10%);
+        -moz-transform: translateY(10%);
+        -ms-transform: translateY(10%);
+        -o-transform: translateY(10%);
+};
+
+    25% {
+        transform: translateY(50%);
+        -webkit-transform: translateY(50%);
+        -moz-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        -o-transform: translateY(50%);
+};
+
+    50% {
+        transform: translateY(70%);
+        -webkit-transform: translateY(70%);
+        -moz-transform: translateY(70%);
+        -ms-transform: translateY(70%);
+        -o-transform: translateY(70%);
+};
+    100% {
+        transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        -moz-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        -o-transform: translateY(100%);
+};
+}
+
+
+.col__covic{
+    height:340px;
+    padding:10px 20px;
+}
+
+.col__covic .carousel-inner img{
+    width:100%;
+    height:320px;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -ms-border-radius:3px;
+    -o-border-radius:3px;
+}
+
+.col__covic__data h3{
+    color: var(--color-white);
+    text-align: center;
+}
+
+.col__covic__data p{
+    color: var(--color-white);
+    padding: 20px 10px;
 }
 
 /* ===================================section aside=================================== */
@@ -577,6 +703,74 @@ section .form__contacto input::placeholder, textarea::placeholder{
 section i{
     color:var(--color-black);
 }
+
+.form__contacto .btn-aragon:hover i{
+    color:var(--color-orange)
+}
+
+
+/* ===================================formulario de Galeria=================================== */
+.container__galeria{
+    margin:0px;
+    padding:0px;
+    margin-top: -60px;
+}
+.col__galeria img{
+    width:100%;
+    height:100vh;
+    top: -60px;
+}
+
+.col__galeria  .btn-aragon-danger{
+    border: 1px solid var(--color-orange);
+    font-weight: 600;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.col__galeria  .btn-aragon-danger:hover{
+    border: 1px solid var(--color-black);
+    font-weight: 600;
+    background: var(--color-orange);
+    color: var(--color-black);
+}
+
+.col__galeria  .btn-aragon-danger:active{
+    border: 1px solid var(--color-black);
+    font-weight: 600;
+    background: var(--color-orange);
+    color: var(--color-black);
+}
+
+.col__galeria  .btn-aragon-danger:hover i{
+    color: var(--color-black);
+}
+
+.col__galeria button i{
+    color : var(--color-orange);
+}
+
+.galery__room{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:40px;
+    padding-right:40px;
+    
+}
+.galery__room img{
+    height: 500px;
+    width:100%;
+    border-radius: 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow:3px 3px 8px rgba(0,0,0,0.5)
+}
+
 /* ===================================section turismo=================================== */
 .turismo{
     background-color: var(--color-black);
@@ -637,11 +831,11 @@ section i{
 .turismo img{
     width:90%;
     height:300px;
-    border-radius: 30px;
+    /* border-radius: 30px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
-    -o-border-radius: 30px;
+    -o-border-radius: 30px; */
 }
 
 .turismo .information__turismo__cartago{
@@ -687,6 +881,39 @@ section i{
 .turismo .row__cafetero{
     display: flex;
     flex-direction: row-reverse;
+}
+
+.container__resena{
+    display:flex;
+    align-items: center;
+    justify-items: center;
+    height: 300px;
+    padding: 20px 150px;
+    margin-bottom: 30px;
+}
+
+.container__resena img{
+    width: 100%;
+    height: 300px;
+    box-shadow:2px 2px 8px rgba(0,0,0,0.9);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.parrafo__resena{
+    padding: 30px 60px;
+    text-align: left;
+    direction: rtl;
+}
+
+.btn__politicas:hover{
+    color: var(--color-black);
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+    margin-bottom: 10px;
 }
 
 /*===================================style modal turismo=================================== */
@@ -1111,6 +1338,31 @@ footer p{
         padding:1px;
     }
 
+    .container__resena{
+        display:flex;
+        align-items: center;
+        justify-items: center;
+        height: 300px;
+        padding: 20px 30px;
+    }
+    
+    .container__resena img{
+        width: 100%;
+        height: 300px;
+        box-shadow:2px 2px 8px rgba(0,0,0,0.9);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+    
+    .parrafo__resena{
+        padding: 10px 10px;
+        text-align: left;
+        direction: rtl;
+    }
+
 
 }
 
@@ -1421,6 +1673,26 @@ footer p{
     .row__aside .col__card button{
         left : 30%;
     }
+
+    .col__covic{
+        max-width: 100%;
+        height:240px;
+        padding:15px 20px;
+    }
+    /* http://jetro.colombiahosting.com.co/cpanel */
+    .col__covic .carousel-inner img{
+        max-width:100%;
+        height:220px;
+    }
+
+    .col__animation{
+        height:200px;
+    }
+
+    .col__animation img{
+        box-shadow:none;
+        max-width: 100%;
+    }
    
     /* ===================================section map ===================================*/
     .section__map .divide__map svg{
@@ -1532,6 +1804,20 @@ footer p{
         margin: 20px 0;
     }
 
+    /* ===================================section Galeria ===================================*/
+
+    .galery__room{
+        padding: 0;
+        padding-top:5px;
+        padding-bottom:5px;
+    }
+    .galery__room img{
+        height: 300px;
+    }
+
+
+
+
     /* ===================================section turismo ===================================*/
     .turismo{
         background-color: var(--color-black);
@@ -1639,6 +1925,31 @@ footer p{
         flex-direction: row-reverse;
     }
 
+    .container__resena{
+        display:flex;
+        align-items: center;
+        justify-items: center;
+        height: 300px;
+        padding: 20px 15px;
+    }
+    
+    .container__resena img{
+        width: 100%;
+        height: 300px;
+        box-shadow:2px 2px 8px rgba(0,0,0,0.9);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+    
+    .parrafo__resena{
+        padding: 10px 10px;
+        text-align: left;
+        direction: rtl;
+    }
+
     /*===================================style modal turismo=================================== */
 
     .modal{
@@ -1667,45 +1978,60 @@ footer p{
         border: 1px solid var(--color-black);
     }
 
-.modal .card h5{
-    color:var(--color-white);
-    font-size: 15px;
-    text-align:center;
-    padding: 3px;
-    margin-top: 2px;
-    margin-bottom: 10px;
-}
+    .modal .card h5{
+        color:var(--color-white);
+        font-size: 15px;
+        text-align:center;
+        padding: 3px;
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
 
-.modal .card img{
-    width: 100%;
-    height: 180px;
-}
+    .modal .card img{
+        width: 100%;
+        height: 180px;
+    }
 
-.modal .card .btn__url{
-    width: 90%;
-    position:absolute;
-    bottom: 10px;
-    display:flex;
-    justify-content: center;
-}
+    .modal .card .btn__url{
+        width: 90%;
+        position:absolute;
+        bottom: 10px;
+        display:flex;
+        justify-content: center;
+    }
 
-.modal .card .btn__url .btn-aragon-danger:hover{
-    background: var(--color-orange);
-}
+    .modal .card .btn__url .btn-aragon-danger:hover{
+        background: var(--color-orange);
+    }
 
-.modal .card .btn__url .btn-aragon-danger:hover i{
-    color: var(--color-black);
-}
+    .modal .card .btn__url .btn-aragon-danger:hover i{
+        color: var(--color-black);
+    }
 
 
-.modal .modal-footer .btn-aragon-danger{
-    border: 1px solid var(--color-orange);
-}
+    .modal .modal-footer .btn-aragon-danger{
+        border: 1px solid var(--color-orange);
+    }
 
-.modal .modal-footer .btn-aragon-danger:hover{
-    border: 1px solid var(--color-black);
-    background: var(--color-orange);
-}
+    .modal .modal-footer .btn-aragon-danger:hover{
+        border: 1px solid var(--color-black);
+        background: var(--color-orange);
+    }
+
+
+    
+    /* ===================================formulario de Galeria=================================== */
+
+    .col__galeria img{
+        width:100%;
+        max-height:60vh;
+    }
+
+    .col__galeria h2{
+        display:block;
+        color: var(--color-white);
+        text-shadow: 2px 3px 8px  rgba(0,0,0,0.9);
+    }
 
 
     footer{
